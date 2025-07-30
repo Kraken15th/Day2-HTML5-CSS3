@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern To Do List</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="user"></div>
+
+        <div class="input-section" id="inputSection">
+            <input type="text" id="nameInput" placeholder="Enter your name..." />
+            <button onclick="showName()">Submit Name</button>
+        </div>
+
+        <div class="input-section" id="taskControls" style="display: none;">
+            <input type="text" id="taskInput" placeholder="Enter a task..." />
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="boards" id="boardsSection" style="display: none;">
+            <div class="board" id="pendingBoard" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+                <h2>Pending</h2>
+                <div id="pendingTasks"></div>
+            </div>
+            <div class="board" id="inProgressBoard" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+                <h2>In Progress</h2>
+                <div id="inProgressTasks"></div>
+            </div>
+            <div class="board" id="completedBoard" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+                <h2>Completed</h2>
+                <div id="completedTasks"></div>
+            </div>
+        </div>
+
+        <div class="color-palette">
+            <div onclick="setColor(event)" class="color-circle" style="background:#23272f;" data-color="#23272f"></div>
+            <div onclick="setColor(event)" class="color-circle" style="background:#1abc9c;" data-color="#1abc9c"></div>
+            <div onclick="setColor(event)" class="color-circle" style="background:#3498db;" data-color="#3498db"></div>
+            <div onclick="setColor(event)" class="color-circle" style="background:#9b59b6;" data-color="#9b59b6"></div>
+            <div onclick="setColor(event)" class="color-circle" style="background:#e67e22;" data-color="#e67e22"></div>
+            <div onclick="setColor(event)" class="color-circle" style="background:#e74c3c;" data-color="#e74c3c"></div>
+            <div onclick="setColor(event)" class="color-circle" style="background:#f1c40f;" data-color="#f1c40f"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js">
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <canvas id="canvas" width="500" height="500"></canvas> -->
+    <!-- <img style="width: 100px; height: 100px;" src="../Day1/assets/Image 1.jpeg" alt=""> -->
+    <h1 id="title" draggable="true" ondragstart="onDrag(event)">drag me over</h1>
+    <div id="container" style="width: 600px; height: 400px; border: 1px black solid;" ondragover="onDragOver(event)"
+        ondrop="onDrop(event)"></div>
+    <script>
+        function onDrag(event) {
+            event.dataTransfer.setData("item", event.target.id);
+            console.log("item", event.target.id);
+        }
+
+        function onDragOver(event) {
+            event.preventDefault();
+        }
+
+        function onDrop(event) {
+            let title = event.dataTransfer.getData("item");
+
+            event.preventDefault();
+            document.getElementById("container").appendChild(document.getElementById(title))
+        }
+        // let context = document.getElementById("canvas").getContext("2d");
+        // context.fillStyle = "blue";
+        // context.fillRect(50, 50, 100, 100);
+        // context.fillStyle = "red";
+        // context.fillRect(200, 50, 100, 100);
+        // context.strokeStyle = "black";
+        // context.moveTo(500, 500);
+        // context.lineTo(0, 0);
+        // context.stroke();
+
+
+
+    </script>
+</body>
+
+</html>
